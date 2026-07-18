@@ -1,0 +1,28 @@
+# Godot-specific ignores
+.godot/
+*.uid
+
+# Imported assets and build artifacts (Generated automatically by Godot)
+.import/
+export_presets.cfg
+
+# Mono/C# specific ignores (Only if you are using Godot .NET edition)
+.mono/
+data_*/
+mono_crash.*.json
+[Log]*
+.vs/
+.csproj
+.sln
+.nuget/
+
+# Crash dumps and logs
+*.log
+
+# OS-specific overrides
+.DS_Store
+Thumbs.db
+
+# Mobile export artifacts (Optional)
+android/
+ios/

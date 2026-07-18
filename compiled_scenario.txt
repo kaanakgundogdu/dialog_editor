@@ -1,0 +1,12 @@
+# id: 0
+@bg bg1
+@music track1
+Qaan (mid_angry): Sasa
+
+# id: 1
+xxxx: pqqppqp
+
+# id: 2
+@bg bg3
+Qaan: asdasdasdasdasdas
+
