@@ -4,18 +4,18 @@ extends EditorPlugin
 var main_panel
 
 func _enter_tree():
-	# 1. Adımda oluşturduğumuz sahneyi yüklüyoruz
+	# Instantiate the main custom panel workspace viewport scene
 	var MainPanelScene = preload("res://addons/dialog_editor/scenes/editor_main.tscn")
 	main_panel = MainPanelScene.instantiate()
 
-	# Bu iki satır panelin editördeki boşluğu dikey ve yatay olarak tamamen kaplamasını sağlar
+	# Configure anchors to expand across the full editor panel layout bounds
 	main_panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	main_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 
-	# Sahneyi Godot'nun ana çalışma ekranına (2D, 3D sekmelerinin olduğu yer) ekliyoruz
+	# Mount the instantiated layout directly inside Godot's core workspace screen
 	EditorInterface.get_editor_main_screen().add_child(main_panel)
 	
-	# Eklenti ilk yüklendiğinde görünmez yapıyoruz (sadece sekmesine tıklanınca açılacak)
+	# Keep the interface layout hidden initially until its specific workspace tab is focused
 	_make_visible(false)
 
 func _exit_tree():

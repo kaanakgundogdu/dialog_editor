@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0hscovbftort"]
+
+[ext_resource type="Script" uid="uid://c1wj02lou6fee" path="res://addons/dialog_editor/scripts/choise_node/choice_node.gd" id="1_461g3"]
+
+[node name="ChoiceNodeUi" type="GraphNode"]
+title = "Choice Block"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("1_461g3")
+
+[node name="IDSpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+max_value = 10000.0
+
+[node name="AddChoiceButton" type="Button" parent="."]
+layout_mode = 2
+text = "+ Add Choise"

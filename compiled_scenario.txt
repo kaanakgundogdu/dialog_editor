@@ -1,12 +1,26 @@
 # id: 0
-@bg bg1
-@music track1
-Qaan (mid_angry): Sasa
+Narrator: 
 
 # id: 1
-xxxx: pqqppqp
+-  -> 2
+-  -> 3
 
 # id: 2
-@bg bg3
-Qaan: asdasdasdasdasdas
+@set_var val += 12
+@jump 4
 
+# id: 3
+@set_var val -= 12
+
+# id: 4
+Narrator: 
+
+# id: 5
+@jump_if val >= 11 6
+@jump 7
+
+# id: 6
+Narrator: 
+
+# id: 7
+Narrator: 

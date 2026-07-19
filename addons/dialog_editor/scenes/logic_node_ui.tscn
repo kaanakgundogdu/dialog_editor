@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dokhphuqpi8kr"]
+[gd_scene load_steps=2 format=3 uid="uid://btyx2pp4lhcl7"]
 
-[ext_resource type="Script" uid="uid://d1vgh1mlelfac" path="res://addons/dialog_editor/scripts/dialog_node/dialog_node.gd" id="1_q7swc"]
+[ext_resource type="Script" uid="uid://c00nhsfqiftq0" path="res://addons/dialog_editor/scripts/logic_node/logic_node.gd" id="1_pk1q7"]
 
-[node name="DialogNodeUI" type="GraphNode"]
-offset_right = 239.0
-offset_bottom = 320.0
-title = "Dialog Block"
+[node name="LogicNodeUI" type="GraphNode"]
+offset_right = 212.0
+offset_bottom = 141.0
+title = "Logic Block"
 slot/0/left_enabled = true
 slot/0/left_type = 0
 slot/0/left_color = Color(1, 1, 1, 1)
@@ -51,54 +51,56 @@ slot/4/right_type = 0
 slot/4/right_color = Color(1, 1, 1, 1)
 slot/4/right_icon = null
 slot/4/draw_stylebox = true
-slot/5/left_enabled = false
-slot/5/left_type = 0
-slot/5/left_color = Color(1, 1, 1, 1)
-slot/5/left_icon = null
-slot/5/right_enabled = false
-slot/5/right_type = 0
-slot/5/right_color = Color(1, 1, 1, 1)
-slot/5/right_icon = null
-slot/5/draw_stylebox = true
-script = ExtResource("1_q7swc")
+script = ExtResource("1_pk1q7")
 
 [node name="IDSpinBox" type="SpinBox" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 max_value = 10000.0
 
-[node name="BgContainer" type="HBoxContainer" parent="."]
+[node name="TypeButton" type="OptionButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Modify Variable (Set/Add)"
+popup/item_0/id = 0
+popup/item_1/text = "Check Condition (If)"
+popup/item_1/id = 1
+
+[node name="OpContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="BgEdit" type="LineEdit" parent="BgContainer"]
+[node name="FlagNameEdit" type="LineEdit" parent="OpContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Background: bg_day"
+placeholder_text = "Flag Name"
 
-[node name="BgButton" type="Button" parent="BgContainer"]
+[node name="OperatorButton" type="OptionButton" parent="OpContainer"]
 layout_mode = 2
-text = "+"
+selected = 0
+item_count = 3
+popup/item_0/text = "="
+popup/item_0/id = 0
+popup/item_1/text = "+="
+popup/item_1/id = 1
+popup/item_2/text = "-="
+popup/item_2/id = 2
 
-[node name="MusicContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="MusicEdit" type="LineEdit" parent="MusicContainer"]
+[node name="FlagValueEdit" type="LineEdit" parent="OpContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Music: track_01"
+placeholder_text = "Value: ex. True"
 
-[node name="MusicButton" type="Button" parent="MusicContainer"]
+[node name="TrueLabel" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
-text = "+"
+text = "Condition Met (True) ->"
 
-[node name="SpeakerEdit" type="LineEdit" parent="."]
+[node name="FalseLabel" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = "Speaker Name"
-
-[node name="ExpressionEdit" type="LineEdit" parent="."]
-layout_mode = 2
-placeholder_text = "Expression: angry_mid"
-
-[node name="TextEdit" type="TextEdit" parent="."]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-placeholder_text = "Dialog"
+text = "Condition Failed (False) ->"
